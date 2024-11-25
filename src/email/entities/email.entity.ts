@@ -1,7 +1,8 @@
 export class Email {
-  id:Number = 0
+  id:number 
   sender:string
   receiver:string
   subject :string
   content :string
+
 }
