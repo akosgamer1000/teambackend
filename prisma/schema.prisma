@@ -10,13 +10,15 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
-model email{
-  id Int @id @default(autoincrement())
-  sender String
+
+model email {
+  id       Int    @id @default(autoincrement())
+  sender   String
   receiver String
-  subject String
-  content String
+  subject  String
+  content  String
+
 }
