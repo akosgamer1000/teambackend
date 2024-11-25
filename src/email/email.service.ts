@@ -13,8 +13,8 @@ export class EmailService {
     return 'This action adds a new email';
   }
 
-  findAll() {
-    return `This action returns all email`;
+  async findAll() {
+    return await this.db.email.findMany() ;
   }
 
   findOne(id: number) {
