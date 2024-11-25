@@ -20,7 +20,9 @@ export class EmailService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} email`;
+    return this.db.email.findUnique({
+      where: { id: id }
+    })
   }
 
  async update(id: number, updateEmailDto: UpdateEmailDto) {
