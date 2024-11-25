@@ -21,8 +21,18 @@ export class EmailService {
     return `This action returns a #${id} email`;
   }
 
-  update(id: number, updateEmailDto: UpdateEmailDto) {
-    return `This action updates a #${id} email`;
+ async update(id: number, updateEmailDto: UpdateEmailDto) {
+    return await this.db.email.update({
+      where: {
+        id,
+      },
+      data: {
+        sender: updateEmailDto.sender,
+        receiver: updateEmailDto.receiver,
+        subject: updateEmailDto.subject,
+        content: updateEmailDto.content
+      }
+    })
   }
 
   async remove(id: number) {

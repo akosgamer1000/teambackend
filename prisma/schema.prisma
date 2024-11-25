@@ -16,7 +16,7 @@ datasource db {
 model email{
   id Int @id @default(autoincrement())
   sender String
-  recever String
+  receiver String
   subject String
   content String
 }
