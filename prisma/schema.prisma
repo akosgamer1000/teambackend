@@ -12,3 +12,11 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model email{
+  id Int @id @default(autoincrement())
+  sender String
+  recever String
+  subject String
+  content String
+}
