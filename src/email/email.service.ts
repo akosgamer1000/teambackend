@@ -10,7 +10,9 @@ export class EmailService {
     this.db = db;
   }
   create(createEmailDto: CreateEmailDto) {
-    return 'This action adds a new email';
+    return this.db.email.create({
+      data: createEmailDto
+    })
   }
 
   findAll() {

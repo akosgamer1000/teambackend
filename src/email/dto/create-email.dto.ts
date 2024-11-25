@@ -1,6 +1,6 @@
 export class CreateEmailDto {
     sender:String
-    receiver:String
+    recever:String
     subject :String
     content :String
 }
