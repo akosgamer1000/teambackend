@@ -56,17 +56,11 @@ export class EmailService {
   }
 
  async update(id: number, updateEmailDto: UpdateEmailDto) {
+    const { subject, content } = updateEmailDto;
     return await this.db.email.update({
-      where: {
-        id,
-      },
-      data: {
-        sender: updateEmailDto.sender,
-        receiver: updateEmailDto.receiver,
-        subject: updateEmailDto.subject,
-        content: updateEmailDto.content
-      }
-    })
+      where: { id },
+      data: { subject, content }
+    });
   }
 
   async remove(id: number) {
